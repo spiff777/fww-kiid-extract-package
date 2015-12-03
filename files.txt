@@ -1,7 +1,10 @@
 ../common/class.KiidPdfExtract.php
 ../common/class.PdfExtract.php
-../common/inc.json_errors.php
+../common/inc.JsonErrors.php
 ../common/class.Isin.php
 ../common/inc.ErrorExceptionHandler.php
+../common/_tests/KiidPdfExtractTest.php
+../common/_tests/KiidPdfExtractTestFixture
 example.php
-../fww-
+sample.pdf
+../fww-kiid-patterns/all.json
