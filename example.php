@@ -8,7 +8,8 @@ if (php_sapi_name() !== 'cli') {
 
 try {
     $pdf_file_path = 'sample.pdf';
-    $config_file_path = 'all.json';
+    $config_file_path = 'patterns.json';
+    // $config_file_path = 'https://lb.fww.de/remote-code-bridge/fww-code/fww-kiid-patterns/master/patterns.json';
 
     $kiid_extract = new KiidPdfExtract($pdf_file_path);
     $kiid_extract->loadConfigurationsFromJsonFile($config_file_path);
@@ -35,9 +36,10 @@ try {
             echo 'Werte aus KIID auslesbar, ausser dem SRRI!', PHP_EOL;
         }
 
-        echo 'Konfiguration, die gepasst hat: ', $kiid_extract->getUsedConfigurationKey(), PHP_EOL;
+        echo 'Konfiguration, die gepasst hat: ', print_r($kiid_extract->getUsedConfigurationAndPatterns(), true), PHP_EOL;
 
         $values = $kiid_extract->getValuesAsArray($record_set_complete);
+        echo 'Ausgelesene Werte:', PHP_EOL;
         var_dump($values);
 
         echo 'Stand: ', $values['valid_as_of_date']->format('d.m.Y'), PHP_EOL;

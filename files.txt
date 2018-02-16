@@ -7,4 +7,4 @@
 ../common/_tests/KiidPdfExtractTestFixture
 example.php
 sample.pdf
-../fww-kiid-patterns/all.json
+../fww-kiid-patterns/patterns.json
